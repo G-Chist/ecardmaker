@@ -5,7 +5,6 @@
 body {
     background: #101314;
 }
-
 @keyframes fadeInAnimation {
     0% {
         color: #101314;
@@ -15,7 +14,7 @@ body {
      }
 }
 .header {
-    animation: fadeInAnimation ease 2s;
+    animation: fadeInAnimation ease 2.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
@@ -23,43 +22,53 @@ body {
     font-weight: bolder;
     font-size: 3vw;
     color: white;
+    text-align: center;
 }
 .semiheader {
     font-family: 'Source Code Pro';
     font-weight: bold;
     font-size: 2vw;
     color: white;
+    text-align: center;
+    width: 50vw;
 }
 .simpletext {
     font-size: 1vw;
     font-family: 'Source Code Pro';
     color: white;
 }
-table {
-    width: 100%;
+.main_table {
+    width: 99vw;
     border: 0px;
 }
-td {
+.semicontainer {
     text-align: center;
-    width: 50%;
+    vertical-align: middle;
+    width: 44.5vw;
+    height: 60vh;
 }
-th {
-    text-align: center;
-    width: 100%;
+.code_table_container {
+    height: 60vh;
+}
+.code_table {
+    margin: 0 auto;
+    width: 44.5vw;
+    height: 60vh;
+}
+.code_table_td {
+    border: 0.2vw solid #bbbbbb;
 }
 textarea {
     background-color: #2c2b29;
     font-size: 1vw;
     font-family: 'Source Code Pro';
     color: white;
-    width: 40vw;
-    height: 60vh;
     text-align: top;
 }
 </style>
 </head>
 <body>
-<table>
+<table class="main_table">
     <thead>
         <tr>
             <th colspan="2" class="header">Make your own online business card</th>
@@ -74,18 +83,49 @@ textarea {
         </tr>
         <tr><td><br /></td></tr>
         <tr>
-            <td><textarea id="code"></textarea></td>
-            <td class="simpletext" id="preview"><img id = "user-logo"/></td>
+            <td class="semicontainer">
+                <div class="code_table_container">
+                <table class="code_table">
+                <tbody>
+                <tr>
+                    <td colspan="3" rowspan="2" class="code_table_td"></td>
+                    <td colspan="3" class="code_table_td"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="code_table_td"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="code_table_td"></td>
+                    <td colspan="3" class="code_table_td"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="code_table_td"></td>
+                    <td colspan="3" class="code_table_td"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="code_table_td"></td>
+                    <td colspan="3" class="code_table_td"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="code_table_td"></td>
+                    <td colspan="3" class="code_table_td"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="code_table_td"></td>
+                    <td colspan="3" class="code_table_td"></td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+            </td>
+            <td class="semicontainer" id="preview"><img id = "user_logo"/></td>
         </tr>
     </tbody>
 </table>
 
 <script>
-let code = document.getElementById('code');
-code.addEventListener('input', function handleChange(event) {
-  code = event.target.value;
-  document.getElementById("user-logo").src = code;
-});
+let user_logo_code = document.getElementById('user_logo_code');
+user_logo_code.addEventListener('input', function handleChange(event) {user_logo_code = event.target.value; document.getElementById("user_logo").src = user_logo_code;});
 </script>
 
 </body>
