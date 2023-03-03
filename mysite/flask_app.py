@@ -1,8 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for
-import time
-from random import *
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def main_page():
     return render_template("MainPage.html")
