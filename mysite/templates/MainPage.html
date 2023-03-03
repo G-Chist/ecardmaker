@@ -75,7 +75,7 @@ textarea {
         <tr><td><br /></td></tr>
         <tr>
             <td><textarea id="code"></textarea></td>
-            <td class="simpletext" id="previewarea"></td>
+            <td class="simpletext" id="preview"><img id = "user-logo"/></td>
         </tr>
     </tbody>
 </table>
@@ -84,7 +84,7 @@ textarea {
 let code = document.getElementById('code');
 code.addEventListener('input', function handleChange(event) {
   code = event.target.value;
-  document.getElementById("previewarea").innerHTML = code;
+  document.getElementById("user-logo").src = code;
 });
 </script>
 
