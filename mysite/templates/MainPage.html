@@ -59,6 +59,7 @@ body {
 .code_table_td {
     border: 0.2vw solid #bbbbbb;
     min-width: 8.33vmin;
+    line-height: 8.33vmin;
     padding: 0px;
 }
 .code_table_tr {
@@ -76,7 +77,9 @@ body {
 .user_table_td {
     border: 0.2vw solid #bbbbbb;
     min-width: 8.33vmin;
+    line-height: 6.25vmin;
     padding: 0px;
+    margin: 0px;
 }
 .user_table_tr {
     min-height: 6.25vmin;
@@ -99,6 +102,17 @@ textarea {
 .user_logo_code {
     height: 16.66vmin;
 }
+td img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.user_div {
+    width: 100%;
+    height: 100%;
+}
 </style>
 </head>
 <body>
@@ -119,30 +133,40 @@ textarea {
         <tr>
             <td class="semicontainer">
                 <div class="code_table_container">
-                <table class="code_table">
+                <table class="code_table" cellspacing="0">
+                <thead>
+                <tr>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                </tr>
+                </thead>
                 <tbody>
                 <tr class="code_table_tr">
                     <td colspan="3" rowspan="2" class="code_table_td"><textarea id="user_logo_code" class="user_logo_code" placeholder="Image link"></textarea></td>
-                    <td colspan="3" class="code_table_td"><textarea id="user_header" placeholder="Header text"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_header_code" placeholder="Header text"></textarea></td>
                 </tr>
                 <tr class="code_table_tr">
-                    <td colspan="3" class="code_table_td"><textarea id="user_semiheader" placeholder="Semiheader text"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_semiheader_code" placeholder="Semiheader text"></textarea></td>
                 </tr>
                 <tr class="code_table_tr">
-                    <td colspan="3" class="code_table_td"><textarea id="user_logo_code" placeholder="Link 1"></textarea></td>
-                    <td colspan="3" class="code_table_td"><textarea id="user_logo_code" placeholder="Image 1"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_1_code" placeholder="Link 1"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_1_img_code" placeholder="Image 1"></textarea></td>
                 </tr>
                 <tr class="code_table_tr">
-                    <td colspan="3" class="code_table_td"><textarea id="user_logo_code" placeholder="Link 2"></textarea></td>
-                    <td colspan="3" class="code_table_td"><textarea id="user_logo_code" placeholder="Image 2"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_2_code" placeholder="Link 2"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_2_img_code" placeholder="Image 2"></textarea></td>
                 </tr>
                 <tr class="code_table_tr">
-                    <td colspan="3" class="code_table_td"><textarea id="user_logo_code" placeholder="Link 3"></textarea></td>
-                    <td colspan="3" class="code_table_td"><textarea id="user_logo_code" placeholder="Image 3"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_3_code" placeholder="Link 3"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_3_img_code" placeholder="Image 3"></textarea></td>
                 </tr>
                 <tr class="code_table_tr">
-                    <td colspan="3" class="code_table_td"><textarea id="user_logo_code" placeholder="QR code description"></textarea></td>
-                    <td colspan="3" class="code_table_td"><textarea id="user_logo_code" placeholder="QR code link"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_qr_descr_code" placeholder="QR code description"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_qr_link_code" placeholder="QR code link"></textarea></td>
                 </tr>
                 </tbody>
                 </table>
@@ -150,31 +174,41 @@ textarea {
             </td>
             <td class="semicontainer" id="preview">
                 <div class="user_table_container">
-                <table class="user_table">
+                <table class="user_table" cellspacing="0">
+                <thead>
+                <tr>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                </tr>
+                </thead>
                 <tbody>
                 <tr class="user_table_tr">
-                    <td colspan="2" rowspan="2" class="user_table_td"></td>
-                    <td colspan="4" class="user_table_td"></td>
+                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"><img id="user_logo"></img></div></td>
+                    <td colspan="4" class="user_table_td"><div class="user_div"></div></td>
                 </tr>
                 <trclass="user_table_tr">
-                    <td colspan="4" class="user_table_td"></td>
+                    <td colspan="4" class="user_table_td"><div class="user_div"></div></td>
                 </tr>
                 <tr class="user_table_tr">
-                    <td colspan="6" class="user_table_td"></td>
+                    <td colspan="6" class="user_table_td"><div class="user_div"></div></td>
                 </tr>
                 <tr class="user_table_tr">
-                    <td colspan="2" rowspan="2" class="user_table_td"></td>
-                    <td colspan="2" rowspan="2" class="user_table_td"></td>
-                    <td colspan="2" rowspan="2" class="user_table_td"></td>
-                </tr>
-                <tr class="user_table_tr"></tr>
-                <tr class="user_table_tr">
-                    <td colspan="6" class="user_table_td"></td>
+                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
+                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
+                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
                 </tr>
                 <tr class="user_table_tr"></tr>
                 <tr class="user_table_tr">
-                    <td colspan="4" rowspan="2" class="user_table_td"></td>
-                    <td colspan="2" rowspan="2" class="user_table_td"></td>
+                    <td colspan="6" class="user_table_td"><div class="user_div"></div></td>
+                </tr>
+                <tr class="user_table_tr"></tr>
+                <tr class="user_table_tr">
+                    <td colspan="4" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
+                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
                 </tr>
                 </tbody>
                 </table>
