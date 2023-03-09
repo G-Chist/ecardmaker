@@ -68,22 +68,16 @@ body {
 .user_table_container {
     min-height: 50vmin;
 }
-.user_table {
-    table-layout: fixed;
-    margin: 0 auto;
-    min-width: 50vmin;
-    min-height: 50vmin;
+#user_table_container {
+    justify-content: center;
+    align-items: center;
+    align: center;
 }
-.user_table_td {
-    border: 0.2vw solid #bbbbbb;
-    min-width: 8.33vmin;
-    line-height: 6.25vmin;
-    padding: 0px;
-    margin: 0px;
-}
-.user_table_tr {
-    min-height: 6.25vmin;
-}
+.user_table_cell {
+    margin: auto;
+    width: 15vmin;
+    min-height: 15vmin;
+ }
 textarea {
     background-color: #2c2b29;
     font-size: 3vmin;
@@ -101,17 +95,6 @@ textarea {
 }
 .user_logo_code {
     height: 16.66vmin;
-}
-td img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    max-height: 100%;
-}
-.user_div {
-    width: 100%;
-    height: 100%;
 }
 </style>
 </head>
@@ -173,45 +156,10 @@ td img {
             </div>
             </td>
             <td class="semicontainer" id="preview">
-                <div class="user_table_container">
-                <table class="user_table" cellspacing="0">
-                <thead>
-                <tr>
-                    <th style="width: 16.66%"></th>
-                    <th style="width: 16.66%"></th>
-                    <th style="width: 16.66%"></th>
-                    <th style="width: 16.66%"></th>
-                    <th style="width: 16.66%"></th>
-                    <th style="width: 16.66%"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="user_table_tr">
-                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"><img id="user_logo"></img></div></td>
-                    <td colspan="4" class="user_table_td"><div class="user_div"></div></td>
-                </tr>
-                <trclass="user_table_tr">
-                    <td colspan="4" class="user_table_td"><div class="user_div"></div></td>
-                </tr>
-                <tr class="user_table_tr">
-                    <td colspan="6" class="user_table_td"><div class="user_div"></div></td>
-                </tr>
-                <tr class="user_table_tr">
-                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
-                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
-                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
-                </tr>
-                <tr class="user_table_tr"></tr>
-                <tr class="user_table_tr">
-                    <td colspan="6" class="user_table_td"><div class="user_div"></div></td>
-                </tr>
-                <tr class="user_table_tr"></tr>
-                <tr class="user_table_tr">
-                    <td colspan="4" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
-                    <td colspan="2" rowspan="2" class="user_table_td"><div class="user_div"></div></td>
-                </tr>
-                </tbody>
-                </table>
+                <div id="user_table_container">
+                  <div class="user_table_cell">first</div>
+                  <div class="user_table_cell">second</div>
+                  <div class="user_table_cell">third</div>
                 </div>
             </td>
         </tr>
