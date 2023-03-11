@@ -74,7 +74,7 @@ body {
     align: center;
     margin: auto;
     width: 48vmin;
-    height: 85vmin;
+    height: 95vmin;
 }
 .user_table_cell {
     margin: auto;
@@ -102,9 +102,9 @@ textarea {
 #user_logo {
     max-width: 16vmin;
     max-height: 16vmin;
-    align: center;
 }
 #user_header {
+    font-weight: 600;
     margin-top: 3vmin;
     margin-bottom: 3vmin;
     margin-left: 0vmin;
@@ -113,9 +113,9 @@ textarea {
     font-size: 5.75vmin;
     font-family: 'Source Code Pro';
     color: white;
-    align: center;
 }
 #user_semiheader {
+    font-weight: 400;
     margin-top: 2vmin;
     margin-bottom: 2vmin;
     margin-left: 0vmin;
@@ -124,19 +124,8 @@ textarea {
     font-size: 3vmin;
     font-family: 'Source Code Pro';
     color: white;
-    align: center;
 }
-#user_link_1_img {
-    margin: 1.5vmin;
-    max-width: 13vmin;
-    max-height: 13vmin;
-}
-#user_link_2_img {
-    margin: 1.5vmin;
-    max-width: 13vmin;
-    max-height: 13vmin;
-}
-#user_link_3_img {
+.user_img {
     margin: 1.5vmin;
     max-width: 13vmin;
     max-height: 13vmin;
@@ -192,10 +181,6 @@ textarea {
                     <td colspan="3" class="code_table_td"><textarea id="user_link_3_code" placeholder="Link 3"></textarea></td>
                     <td colspan="3" class="code_table_td"><textarea id="user_link_3_img_code" placeholder="Image 3"></textarea></td>
                 </tr>
-                <tr class="code_table_tr">
-                    <td colspan="3" class="code_table_td"><textarea id="user_qr_descr_code" placeholder="QR code description"></textarea></td>
-                    <td colspan="3" class="code_table_td"><textarea id="user_qr_link_code" placeholder="QR code link"></textarea></td>
-                </tr>
                 </tbody>
                 </table>
             </div>
@@ -208,11 +193,10 @@ textarea {
                   <div class="user_table_cell" id="cell3"><p id="user_semiheader"></p></div>
 
                   <div class="user_table_cell" id="cell4">
-                  <a id="user_link_1"><img id="user_link_1_img" align="left"></img></a>
-                  <a id="user_link_2"><img id="user_link_2_img" align="center"></img></a>
-                  <a id="user_link_3"><img id="user_link_3_img" align="right"></img></a>
+                  <a id="user_link_1"><img id="user_link_1_img" class="user_img" align="left"></img></a>
+                  <a id="user_link_2"><img id="user_link_2_img" class="user_img" align="center"></img></a>
+                  <a id="user_link_3"><img id="user_link_3_img" class="user_img" align="right"></img></a>
                   </div>
-
                 </div>
             </td>
         </tr>
@@ -220,7 +204,6 @@ textarea {
 </table>
 
 <script>
-
 let user_logo_code = document.getElementById('user_logo_code');
 user_logo_code.addEventListener('input', function handleChange(event) {user_logo_code = event.target.value; document.getElementById("user_logo").src = user_logo_code;});
 
