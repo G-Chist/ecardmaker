@@ -230,6 +230,63 @@ user_link_3_img_code.addEventListener('input', function handleChange(event) {use
 
 let user_link_3_code = document.getElementById('user_link_3_code');
 user_link_3_code.addEventListener('input', function handleChange(event) {user_link_3_code = event.target.value; document.getElementById("user_link_3").href = user_link_3_code;});
+
+var code = `
+<html>
+<head>
+<link href=' http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+<style>
+body {
+    background: #2c2b29;
+}
+#user_table_container {
+    background-color: #2c2b29;
+    justify-content: center;
+    align-items: center;
+    align: center;
+    margin: auto;
+    width: 48vmin;
+    height: 95vmin;
+}
+.user_table_cell {
+    margin: auto;
+    align-items: center;
+    width: 100%;
+ }
+#user_logo {
+    max-width: 16vmin;
+    max-height: 16vmin;
+}
+#user_header {
+    font-weight: 600;
+    margin-top: 3vmin;
+    margin-bottom: 3vmin;
+    margin-left: 0vmin;
+    margin-right: 0vmin;
+    width: 100%;
+    font-size: 5.75vmin;
+    font-family: 'Source Code Pro';
+    color: white;
+}
+#user_semiheader {
+    font-weight: 400;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+    margin-left: 0vmin;
+    margin-right: 0vmin;
+    width: 100%;
+    font-size: 3vmin;
+    font-family: 'Source Code Pro';
+    color: white;
+}
+.user_img {
+    margin: 1.5vmin;
+    max-width: 13vmin;
+    max-height: 13vmin;
+}
+</style>
+</head>
+`;
 </script>
 
 </body>
