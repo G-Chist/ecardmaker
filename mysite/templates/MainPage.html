@@ -74,7 +74,7 @@ body {
     align: center;
     margin: auto;
     width: 48vmin;
-    height: 95vmin;
+    height: 105vmin;
 }
 .user_table_cell {
     margin: auto;
@@ -125,6 +125,28 @@ textarea {
     font-family: 'Source Code Pro';
     color: white;
 }
+#user_additional_text_1 {
+    font-weight: 400;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+    margin-left: 0vmin;
+    margin-right: 0vmin;
+    width: 100%;
+    font-size: 3vmin;
+    font-family: 'Source Code Pro';
+    color: white;
+}
+#user_additional_text_2 {
+    font-weight: 350;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+    margin-left: 0vmin;
+    margin-right: 0vmin;
+    width: 100%;
+    font-size: 2vmin;
+    font-family: 'Source Code Pro';
+    color: white;
+}
 .user_img {
     margin: 1.5vmin;
     max-width: 13vmin;
@@ -164,10 +186,10 @@ textarea {
                 <tbody>
                 <tr class="code_table_tr">
                     <td colspan="3" rowspan="2" class="code_table_td"><textarea id="user_logo_code" class="user_logo_code" placeholder="Image link"></textarea></td>
-                    <td colspan="3" class="code_table_td"><textarea id="user_header_code" placeholder="Header text"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_header_code" placeholder="Title text"></textarea></td>
                 </tr>
                 <tr class="code_table_tr">
-                    <td colspan="3" class="code_table_td"><textarea id="user_semiheader_code" placeholder="Semiheader text"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_semiheader_code" placeholder="Subtitle text"></textarea></td>
                 </tr>
                 <tr class="code_table_tr">
                     <td colspan="3" class="code_table_td"><textarea id="user_link_1_code" placeholder="Link 1"></textarea></td>
@@ -180,6 +202,22 @@ textarea {
                 <tr class="code_table_tr">
                     <td colspan="3" class="code_table_td"><textarea id="user_link_3_code" placeholder="Link 3"></textarea></td>
                     <td colspan="3" class="code_table_td"><textarea id="user_link_3_img_code" placeholder="Image 3"></textarea></td>
+                </tr>
+                <tr class="code_table_tr">
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_4_code" placeholder="Link 4"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_4_img_code" placeholder="Image 4"></textarea></td>
+                </tr>
+                <tr class="code_table_tr">
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_5_code" placeholder="Link 5"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_5_img_code" placeholder="Image 5"></textarea></td>
+                </tr>
+                <tr class="code_table_tr">
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_6_code" placeholder="Link 6"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_6_img_code" placeholder="Image 6"></textarea></td>
+                </tr>
+                <tr class="code_table_tr">
+                    <td colspan="3" class="code_table_td"><textarea id="user_additional_text_1_code" placeholder="Additional text 1"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_additional_text_2_code" placeholder="Additional text 2"></textarea></td>
                 </tr>
                 </tbody>
                 </table>
@@ -197,6 +235,15 @@ textarea {
                   <a id="user_link_2"><img id="user_link_2_img" class="user_img" align="center"></img></a>
                   <a id="user_link_3"><img id="user_link_3_img" class="user_img" align="right"></img></a>
                   </div>
+
+                  <div class="user_table_cell" id="cell5">
+                  <a id="user_link_4"><img id="user_link_4_img" class="user_img" align="left"></img></a>
+                  <a id="user_link_5"><img id="user_link_5_img" class="user_img" align="center"></img></a>
+                  <a id="user_link_6"><img id="user_link_6_img" class="user_img" align="right"></img></a>
+                  </div>
+
+                  <div class="user_table_cell" id="cell6"><p id="user_additional_text_1"></p></div>
+                  <div class="user_table_cell" id="cell7"><p id="user_additional_text_2"></p></div>
                 </div>
             </td>
         </tr>
@@ -230,6 +277,30 @@ user_link_3_img_code.addEventListener('input', function handleChange(event) {use
 
 let user_link_3_code = document.getElementById('user_link_3_code');
 user_link_3_code.addEventListener('input', function handleChange(event) {user_link_3_code = event.target.value; document.getElementById("user_link_3").href = user_link_3_code;});
+
+let user_link_4_img_code = document.getElementById('user_link_4_img_code');
+user_link_4_img_code.addEventListener('input', function handleChange(event) {user_link_4_img_code = event.target.value; document.getElementById("user_link_4_img").src = user_link_4_img_code;});
+
+let user_link_4_code = document.getElementById('user_link_4_code');
+user_link_4_code.addEventListener('input', function handleChange(event) {user_link_4_code = event.target.value; document.getElementById("user_link_4").href = user_link_4_code;});
+
+let user_link_5_img_code = document.getElementById('user_link_5_img_code');
+user_link_5_img_code.addEventListener('input', function handleChange(event) {user_link_5_img_code = event.target.value; document.getElementById("user_link_5_img").src = user_link_5_img_code;});
+
+let user_link_5_code = document.getElementById('user_link_5_code');
+user_link_5_code.addEventListener('input', function handleChange(event) {user_link_5_code = event.target.value; document.getElementById("user_link_5").href = user_link_5_code;});
+
+let user_link_6_img_code = document.getElementById('user_link_6_img_code');
+user_link_6_img_code.addEventListener('input', function handleChange(event) {user_link_6_img_code = event.target.value; document.getElementById("user_link_6_img").src = user_link_6_img_code;});
+
+let user_link_6_code = document.getElementById('user_link_6_code');
+user_link_6_code.addEventListener('input', function handleChange(event) {user_link_6_code = event.target.value; document.getElementById("user_link_6").href = user_link_6_code;});
+
+let user_additional_text_1_code = document.getElementById('user_additional_text_1_code');
+user_additional_text_1_code.addEventListener('input', function handleChange(event) {user_additional_text_1_code = event.target.value; document.getElementById("user_additional_text_1").innerText = user_additional_text_1_code;});
+
+let user_additional_text_2_code = document.getElementById('user_additional_text_2_code');
+user_additional_text_2_code.addEventListener('input', function handleChange(event) {user_additional_text_2_code = event.target.value; document.getElementById("user_additional_text_2").innerText = user_additional_text_2_code;});
 
 var code = `
 <html>
