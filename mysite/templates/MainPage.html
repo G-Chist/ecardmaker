@@ -32,7 +32,7 @@ body {
     text-align: center;
     min-width: 45vw;
 }
-.simpletext {
+.simpvarext {
     font-size: 1vw;
     font-family: 'Source Code Pro';
     color: white;
@@ -74,7 +74,7 @@ body {
     align: center;
     margin: auto;
     width: 48vmin;
-    height: 105vmin;
+    height: 100vmin;
 }
 .user_table_cell {
     margin: auto;
@@ -151,6 +151,11 @@ textarea {
     margin: 1.5vmin;
     max-width: 13vmin;
     max-height: 13vmin;
+}
+#copy_button {
+    margin: 2vmin;
+    width: 18vmin;
+    height: 7vmin;
 }
 </style>
 </head>
@@ -245,64 +250,74 @@ textarea {
                   <div class="user_table_cell" id="cell6"><p id="user_additional_text_1"></p></div>
                   <div class="user_table_cell" id="cell7"><p id="user_additional_text_2"></p></div>
                 </div>
+
+                <div>
+                <form>
+                <input type="button" id="copy_button" value="Copy to clipboard" onclick="textToClipboard()">
+                </form>
+                </div>
             </td>
         </tr>
     </tbody>
 </table>
 
 <script>
-let user_logo_code = document.getElementById('user_logo_code');
-user_logo_code.addEventListener('input', function handleChange(event) {user_logo_code = event.target.value; document.getElementById("user_logo").src = user_logo_code;});
+var user_logo_value = ``;
 
-let user_header_code = document.getElementById('user_header_code');
+var user_logo_code = document.getElementById('user_logo_code');
+user_logo_code.addEventListener('input', function handleChange(event) {user_logo_code = event.target.value; document.getElementById("user_logo").src = user_logo_code; user_logo_value = user_logo_code;});
+
+var user_header_code = document.getElementById('user_header_code');
 user_header_code.addEventListener('input', function handleChange(event) {user_header_code = event.target.value; document.getElementById("user_header").innerText = user_header_code;});
 
-let user_semiheader_code = document.getElementById('user_semiheader_code');
+var user_semiheader_code = document.getElementById('user_semiheader_code');
 user_semiheader_code.addEventListener('input', function handleChange(event) {user_semiheader_code = event.target.value; document.getElementById("user_semiheader").innerText = user_semiheader_code;});
 
-let user_link_1_img_code = document.getElementById('user_link_1_img_code');
+var user_link_1_img_code = document.getElementById('user_link_1_img_code');
 user_link_1_img_code.addEventListener('input', function handleChange(event) {user_link_1_img_code = event.target.value; document.getElementById("user_link_1_img").src = user_link_1_img_code;});
 
-let user_link_1_code = document.getElementById('user_link_1_code');
+var user_link_1_code = document.getElementById('user_link_1_code');
 user_link_1_code.addEventListener('input', function handleChange(event) {user_link_1_code = event.target.value; document.getElementById("user_link_1").href = user_link_1_code;});
 
-let user_link_2_img_code = document.getElementById('user_link_2_img_code');
+var user_link_2_img_code = document.getElementById('user_link_2_img_code');
 user_link_2_img_code.addEventListener('input', function handleChange(event) {user_link_2_img_code = event.target.value; document.getElementById("user_link_2_img").src = user_link_2_img_code;});
 
-let user_link_2_code = document.getElementById('user_link_2_code');
+var user_link_2_code = document.getElementById('user_link_2_code');
 user_link_2_code.addEventListener('input', function handleChange(event) {user_link_2_code = event.target.value; document.getElementById("user_link_2").href = user_link_2_code;});
 
-let user_link_3_img_code = document.getElementById('user_link_3_img_code');
+var user_link_3_img_code = document.getElementById('user_link_3_img_code');
 user_link_3_img_code.addEventListener('input', function handleChange(event) {user_link_3_img_code = event.target.value; document.getElementById("user_link_3_img").src = user_link_3_img_code;});
 
-let user_link_3_code = document.getElementById('user_link_3_code');
+var user_link_3_code = document.getElementById('user_link_3_code');
 user_link_3_code.addEventListener('input', function handleChange(event) {user_link_3_code = event.target.value; document.getElementById("user_link_3").href = user_link_3_code;});
 
-let user_link_4_img_code = document.getElementById('user_link_4_img_code');
+var user_link_4_img_code = document.getElementById('user_link_4_img_code');
 user_link_4_img_code.addEventListener('input', function handleChange(event) {user_link_4_img_code = event.target.value; document.getElementById("user_link_4_img").src = user_link_4_img_code;});
 
-let user_link_4_code = document.getElementById('user_link_4_code');
+var user_link_4_code = document.getElementById('user_link_4_code');
 user_link_4_code.addEventListener('input', function handleChange(event) {user_link_4_code = event.target.value; document.getElementById("user_link_4").href = user_link_4_code;});
 
-let user_link_5_img_code = document.getElementById('user_link_5_img_code');
+var user_link_5_img_code = document.getElementById('user_link_5_img_code');
 user_link_5_img_code.addEventListener('input', function handleChange(event) {user_link_5_img_code = event.target.value; document.getElementById("user_link_5_img").src = user_link_5_img_code;});
 
-let user_link_5_code = document.getElementById('user_link_5_code');
+var user_link_5_code = document.getElementById('user_link_5_code');
 user_link_5_code.addEventListener('input', function handleChange(event) {user_link_5_code = event.target.value; document.getElementById("user_link_5").href = user_link_5_code;});
 
-let user_link_6_img_code = document.getElementById('user_link_6_img_code');
+var user_link_6_img_code = document.getElementById('user_link_6_img_code');
 user_link_6_img_code.addEventListener('input', function handleChange(event) {user_link_6_img_code = event.target.value; document.getElementById("user_link_6_img").src = user_link_6_img_code;});
 
-let user_link_6_code = document.getElementById('user_link_6_code');
+var user_link_6_code = document.getElementById('user_link_6_code');
 user_link_6_code.addEventListener('input', function handleChange(event) {user_link_6_code = event.target.value; document.getElementById("user_link_6").href = user_link_6_code;});
 
-let user_additional_text_1_code = document.getElementById('user_additional_text_1_code');
+var user_additional_text_1_code = document.getElementById('user_additional_text_1_code');
 user_additional_text_1_code.addEventListener('input', function handleChange(event) {user_additional_text_1_code = event.target.value; document.getElementById("user_additional_text_1").innerText = user_additional_text_1_code;});
 
-let user_additional_text_2_code = document.getElementById('user_additional_text_2_code');
+var user_additional_text_2_code = document.getElementById('user_additional_text_2_code');
 user_additional_text_2_code.addEventListener('input', function handleChange(event) {user_additional_text_2_code = event.target.value; document.getElementById("user_additional_text_2").innerText = user_additional_text_2_code;});
 
-var code = `
+function textToClipboard() {
+
+    var code = `
 <html>
 <head>
 <link href=' http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
@@ -317,7 +332,7 @@ body {
     align: center;
     margin: auto;
     width: 48vmin;
-    height: 95vmin;
+    height: 100vmin;
 }
 .user_table_cell {
     margin: auto;
@@ -350,6 +365,28 @@ body {
     font-family: 'Source Code Pro';
     color: white;
 }
+#user_additional_text_1 {
+    font-weight: 400;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+    margin-left: 0vmin;
+    margin-right: 0vmin;
+    width: 100%;
+    font-size: 3vmin;
+    font-family: 'Source Code Pro';
+    color: white;
+}
+#user_additional_text_2 {
+    font-weight: 350;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+    margin-left: 0vmin;
+    margin-right: 0vmin;
+    width: 100%;
+    font-size: 2vmin;
+    font-family: 'Source Code Pro';
+    color: white;
+}
 .user_img {
     margin: 1.5vmin;
     max-width: 13vmin;
@@ -357,7 +394,41 @@ body {
 }
 </style>
 </head>
+<body>
+<div id="user_table_container">
+
+<div class="user_table_cell" id="cell1"><img id="user_logo" src="` + user_logo_value + `"></img></div>
+
+<div class="user_table_cell" id="cell2"><p id="user_header"></p></div>
+<div class="user_table_cell" id="cell3"><p id="user_semiheader"></p></div>
+
+<div class="user_table_cell" id="cell4">
+<a id="user_link_1"><img id="user_link_1_img" class="user_img" align="left"></img></a>
+<a id="user_link_2"><img id="user_link_2_img" class="user_img" align="center"></img></a>
+<a id="user_link_3"><img id="user_link_3_img" class="user_img" align="right"></img></a>
+</div>
+
+<div class="user_table_cell" id="cell5">
+<a id="user_link_4"><img id="user_link_4_img" class="user_img" align="left"></img></a>
+<a id="user_link_5"><img id="user_link_5_img" class="user_img" align="center"></img></a>
+<a id="user_link_6"><img id="user_link_6_img" class="user_img" align="right"></img></a>
+</div>
+
+<div class="user_table_cell" id="cell6"><p id="user_additional_text_1"></p></div>
+<div class="user_table_cell" id="cell7"><p id="user_additional_text_2"></p></div>
+</div>
+</body>
 `;
+
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = code;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
+
+
 </script>
 
 </body>
