@@ -162,6 +162,18 @@ textarea {
     color: white;
     background: #5e8164;
 }
+#hide_show_additional_button {
+    margin: 2vmin;
+    width: 40vmin;
+    height: 7vmin;
+    font-size: 2.5vmin;
+    font-family: 'Source Code Pro';
+    color: white;
+    background: #5e8164;
+}
+#additional_table {
+    display: none;
+}
 </style>
 </head>
 <body>
@@ -231,6 +243,41 @@ textarea {
                 </tr>
                 </tbody>
                 </table>
+
+                <div>
+                <button id="hide_show_additional_button" onclick="hideShowAdditional()">Show additional parameters</button>
+                </div>
+
+                <table class="code_table" cellspacing="0" id="additional_table">
+                <thead>
+                <tr>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                    <th style="width: 16.66%"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="code_table_tr">
+                    <td colspan="3" class="code_table_td"><textarea id="user_logo_size_code" placeholder="Logo size"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_font_name_code" placeholder="Font name"></textarea></td>
+                </tr>
+                <tr class="code_table_tr">
+                    <td colspan="3" class="code_table_td"><textarea id="user_header_size_code" placeholder="Header font size"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_link_img_size_code" placeholder="Link image size"></textarea></td>
+                </tr>
+                <tr class="code_table_tr">
+                    <td colspan="3" class="code_table_td"><textarea id="user_semiheader_size_code" placeholder="Subtitle font size"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_additional_text_size_code" placeholder="Additional text font size"></textarea></td>
+                </tr>
+                <tr class="code_table_tr">
+                    <td colspan="3" class="code_table_td"><textarea id="user_bgcolor_code" placeholder="Background color"></textarea></td>
+                    <td colspan="3" class="code_table_td"><textarea id="user_textcolor_code" placeholder="Text color"></textarea></td>
+                </tr>
+                </tbody>
+                </table>
             </div>
             </td>
             <td class="semicontainer" id="preview">
@@ -266,8 +313,8 @@ textarea {
 
 <script>
 var user_logo_value = ``;
-var user_header_value = ``;
-var user_semiheader_value = ``;
+var user_header_value = `Lorem ipsum`;
+var user_semiheader_value = `Dolor sit amet`;
 var user_link_1_img_value = ``;
 var user_link_1_value = ``;
 var user_link_2_img_value = ``;
@@ -280,9 +327,19 @@ var user_link_5_img_value = ``;
 var user_link_5_value = ``;
 var user_link_6_img_value = ``;
 var user_link_6_value = ``;
-var user_additional_text_1_value = ``;
-var user_additional_text_2_value = ``;
+var user_additional_text_1_value = `Consectetur adipiscing elit`;
+var user_additional_text_2_value = `Sed do eiusmod tempor incididunt`;
 
+var user_logo_size_value = `16`;
+var user_font_name_value = `Source Code Pro`;
+var user_header_size_value = `5.75`;
+var user_link_img_size_value = `13`;
+var user_semiheader_size_value = `3`;
+var user_additional_text_size_value = `2`;
+var user_bgcolor_value = `#101314`;
+var user_textcolor_value = `white`;
+
+//Parameters
 var user_logo_code = document.getElementById('user_logo_code');
 user_logo_code.addEventListener('input', function handleChange(event) {user_logo_code = event.target.value; document.getElementById("user_logo").src = user_logo_code; user_logo_value = user_logo_code;});
 
@@ -333,6 +390,43 @@ user_additional_text_1_code.addEventListener('input', function handleChange(even
 
 var user_additional_text_2_code = document.getElementById('user_additional_text_2_code');
 user_additional_text_2_code.addEventListener('input', function handleChange(event) {user_additional_text_2_code = event.target.value; document.getElementById("user_additional_text_2").innerText = user_additional_text_2_code; user_additional_text_2_value = user_additional_text_2_code;});
+
+//Additional parameters
+
+var user_logo_size_code = document.getElementById('user_logo_size_code');
+user_logo_size_code.addEventListener('input', function handleChange(event) {user_logo_size_code = event.target.value; document.getElementById("user_logo_size").src = user_logo_size_code; user_logo_size_value = user_logo_size_code;});
+
+var user_font_name_code = document.getElementById('user_font_name_code');
+user_font_name_code.addEventListener('input', function handleChange(event) {user_font_name_code = event.target.value; document.getElementById("user_font_name").innerText = user_font_name_code; user_font_name_value = user_font_name_code;});
+
+var user_header_size_code = document.getElementById('user_header_size_code');
+user_header_size_code.addEventListener('input', function handleChange(event) {user_header_size_code = event.target.value; document.getElementById("user_header_size").innerText = user_header_size_code; user_header_size_value = user_header_size_code;});
+
+var user_link_img_size_code = document.getElementById('user_link_img_size_code');
+user_link_img_size_code.addEventListener('input', function handleChange(event) {user_link_img_size_code = event.target.value; document.getElementById("user_link_img_size").src = user_link_img_size_code; user_link_img_size_value = user_link_img_size_code;});
+
+var user_semiheader_size_code = document.getElementById('user_semiheader_size_code');
+user_semiheader_size_code.addEventListener('input', function handleChange(event) {user_semiheader_size_code = event.target.value; document.getElementById("user_semiheader_size").href = user_semiheader_size_code; user_semiheader_size_value = user_semiheader_size_code;});
+
+var user_additional_text_size_code = document.getElementById('user_additional_text_size_code');
+user_additional_text_size_code.addEventListener('input', function handleChange(event) {user_additional_text_size_code = event.target.value; document.getElementById("user_additional_text_size").src = user_additional_text_size_code; user_additional_text_size_value = user_additional_text_size_code;});
+
+var user_bgcolor_code = document.getElementById('user_bgcolor_code');
+user_bgcolor_code.addEventListener('input', function handleChange(event) {user_bgcolor_code = event.target.value; document.getElementById("user_bgcolor").href = user_bgcolor_code; user_bgcolor_value = user_bgcolor_code;});
+
+var user_textcolor_code = document.getElementById('user_textcolor_code');
+user_textcolor_code.addEventListener('input', function handleChange(event) {user_textcolor_code = event.target.value; document.getElementById("user_textcolor").src = user_textcolor_code; user_textcolor_value = user_textcolor_code;});
+
+function hideShowAdditional() {
+    if (document.getElementById('hide_show_additional_button').innerHTML == 'Show additional parameters') {
+        document.getElementById('hide_show_additional_button').innerHTML = 'Hide additional parameters';
+        document.getElementById('additional_table').style.display = "block";
+    }
+    else if (document.getElementById('hide_show_additional_button').innerHTML == 'Hide additional parameters') {
+        document.getElementById('hide_show_additional_button').innerHTML = 'Show additional parameters';
+        document.getElementById('additional_table').style.display = "none";
+    }
+}
 
 function textToClipboard() {
 
