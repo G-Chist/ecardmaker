@@ -394,16 +394,28 @@ user_additional_text_2_code.addEventListener('input', function handleChange(even
 //Additional parameters
 
 var user_logo_size_code = document.getElementById('user_logo_size_code');
-user_logo_size_code.addEventListener('input', function handleChange(event) {user_logo_size_code = event.target.value; document.getElementById("user_logo_size").src = user_logo_size_code; user_logo_size_value = user_logo_size_code;});
+user_logo_size_code.addEventListener('input', function handleChange(event) {user_logo_size_code = event.target.value; document.getElementById("user_logo").style.maxHeight  = user_logo_size_code + "vmin";
+document.getElementById("user_logo").style.maxWidth  = user_logo_size_code + "vmin";
+user_logo_size_value = user_logo_size_code + "vmin";});
 
 var user_font_name_code = document.getElementById('user_font_name_code');
-user_font_name_code.addEventListener('input', function handleChange(event) {user_font_name_code = event.target.value; document.getElementById("user_font_name").innerText = user_font_name_code; user_font_name_value = user_font_name_code;});
+user_font_name_code.addEventListener('input', function handleChange(event) {user_font_name_code = event.target.value; document.getElementById("user_header").style.fontFamily = convert(user_font_name_code);
+document.getElementById("user_semiheader").style.fontFamily = convert(user_font_name_code);
+document.getElementById("user_additional_text_1").style.fontFamily = convert(user_font_name_code);
+document.getElementById("user_additional_text_2").style.fontFamily = convert(user_font_name_code);
+user_font_name_value = convert(user_font_name_code);});
 
 var user_header_size_code = document.getElementById('user_header_size_code');
-user_header_size_code.addEventListener('input', function handleChange(event) {user_header_size_code = event.target.value; document.getElementById("user_header_size").innerText = user_header_size_code; user_header_size_value = user_header_size_code;});
+user_header_size_code.addEventListener('input', function handleChange(event) {user_header_size_code = event.target.value; document.getElementById("user_header").style.fontSize = user_header_size_code + "vmin"; user_header_size_value = user_header_size_code + "vmin";});
 
 var user_link_img_size_code = document.getElementById('user_link_img_size_code');
-user_link_img_size_code.addEventListener('input', function handleChange(event) {user_link_img_size_code = event.target.value; document.getElementById("user_link_img_size").src = user_link_img_size_code; user_link_img_size_value = user_link_img_size_code;});
+user_link_img_size_code.addEventListener('input', function handleChange(event) {user_link_img_size_code = event.target.value; document.getElementsByClassName("user_img")[0].style.maxHeight = user_link_img_size_code + "vmin";
+var ele = document.getElementsByClassName('user_img');
+for (var i = 0; i < ele.length; i++ ) {
+    ele[i].style.maxWidth = user_link_img_size_code + "vmin";
+    ele[i].style.maxHeight = user_link_img_size_code + "vmin";
+}
+user_link_img_size_value = user_link_img_size_code + "vmin";});
 
 var user_semiheader_size_code = document.getElementById('user_semiheader_size_code');
 user_semiheader_size_code.addEventListener('input', function handleChange(event) {user_semiheader_size_code = event.target.value; document.getElementById("user_semiheader_size").href = user_semiheader_size_code; user_semiheader_size_value = user_semiheader_size_code;});
@@ -416,6 +428,17 @@ user_bgcolor_code.addEventListener('input', function handleChange(event) {user_b
 
 var user_textcolor_code = document.getElementById('user_textcolor_code');
 user_textcolor_code.addEventListener('input', function handleChange(event) {user_textcolor_code = event.target.value; document.getElementById("user_textcolor").src = user_textcolor_code; user_textcolor_value = user_textcolor_code;});
+
+function convert(string) {
+  // Split the string into an array of words
+  let words = string.split(/\s+/);
+
+  // Capitalize the first letter of each word and lowercase the rest
+  words = words.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
+
+  // Join the words with ' ' as a delimiter and return the result
+  return words.join(' ');
+}
 
 function hideShowAdditional() {
     if (document.getElementById('hide_show_additional_button').innerHTML == 'Show additional parameters') {
